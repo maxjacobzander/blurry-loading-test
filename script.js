@@ -12,4 +12,9 @@ function blurring() {
         clearInterval(int)
     }
     loadText.innerText = `${load}%`
+    loadText.style.opacity = scale(load, 0, 100, 1, 0)
+}
+
+const scale = (number, inMin, inMax, outMin, outMax) => {
+    return (number - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
 }
